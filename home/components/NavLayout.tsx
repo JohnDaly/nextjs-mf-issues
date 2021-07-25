@@ -1,6 +1,10 @@
 import Nav from "./nav";
 
-function NavLayout({ children }) {
+type Props = {
+  children?: React.ReactNode;
+}
+
+function NavLayout({ children }: Props) {
   return (
     <>
       <Nav />

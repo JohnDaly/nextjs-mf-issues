@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "workspaces": [
+    "./checkout",
+    "./home",
+    "./shared"
+  ],
+  "scripts": {
+    "start": "concurrently \"cd checkout; npm run dev\" \"cd home; npm run dev\"",
+    "build": "concurrently \"cd checkout; npm run build\" \"cd home; npm run build\"",
+    "serve": "concurrently \"cd checkout; npm run start\" \"cd home; npm run start\""
+  },
+  "dependencies": {
+    "@module-federation/nextjs-mf": "^3.1.0",
+    "concurrently": "^6.2.0"
+  }
+}

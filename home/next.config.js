@@ -23,7 +23,7 @@ module.exports = withFederatedSidecar({
     config.experiments = { topLevelAwait: true };
 
     config.module.rules.push({
-      test: /_app.js/,
+      test: /_app.tsx/,
       loader: "@module-federation/nextjs-mf/lib/federation-loader.js",
     });
 

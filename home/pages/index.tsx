@@ -2,20 +2,19 @@ import React from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-// const RemoteTitle = dynamic(
-//   () => {
-//     return window.checkout?.get("./title").then((factory) => factory());
-//   },
-//   { 
-//     loading: () => <div>RemoteTitle is loading</div>,
-//     ssr: false
-//   }
-// );
-const RemoteTitle = dynamic(() => import('checkout/title'), 
-{ 
-  loading: () => <div>RemoteTitle is loading</div>,
-  ssr: false
-});
+const RemoteTitle = dynamic(
+  () => {
+    return window.checkout?.get("./title").then((factory) => factory());
+  },
+  {
+    ssr: false
+  }
+);
+// const RemoteTitle = dynamic(() => import('checkout/title'), 
+// { 
+//   loading: () => <div>RemoteTitle is loading</div>,
+//   ssr: false
+// });
 
 const Home = ({}: any) => {
   return (
